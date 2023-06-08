@@ -1,0 +1,67 @@
+<style>
+    /* Hide scrollbars */
+    iframe {
+        overflow: hidden;
+    }
+
+    .header{
+        width: 100%;
+        float: top;
+        height: 10vh;
+        background: #1876f1;
+    }
+    .topic{
+        font-family: cursive;
+        color: whitesmoke;
+        font-size: xx-large;
+        margin-top: 8px;
+
+    }
+    .inner-header{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .inner-header a{
+        margin-top: 15px;
+        height: 30px;
+        color: #f4f4f4;
+        text-decoration: none;
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .inner-header a:hover{
+        background: #1463cc;
+        border-radius: 6px;
+
+    }
+
+    body {
+        margin-right: 2px;
+        margin-left: 2px;
+        margin-top:  2px;
+        font-family: Arial;
+    }
+    .logout{
+        margin-right: 5px;
+    }
+</style>
+<div class="header">
+  <div class="inner-header">
+    <h2 class="topic">
+      Mr. Supervisor</h2>
+    <%= link_to 'Home', home_path, class: 'home' %>
+    <%= link_to 'Logs', logs_path, class: 'log' %>
+    <%= link_to 'Graph', graph_path, class: 'graph' %>
+    <%= link_to 'Logout', logout_path, class: 'logout' %>
+  </div></div>
+<div style="display: flex">
+  <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="50%" height="332vh" src="https://charts.mongodb.com/charts-gowtham-clpro/embed/charts?id=64641e27-ed0b-46fa-843a-439dc42dabef&maxDataAge=60&theme=light&autoRefresh=true"></iframe>
+  <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="50%" height="332vh" src="https://charts.mongodb.com/charts-gowtham-clpro/embed/charts?id=64641f0d-67dd-47ae-804e-5e8be0ec6a28&maxDataAge=60&theme=light&autoRefresh=true"></iframe>
+</div>
+  <div style="display: flex">
+    <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="50%" height="332vh" src="https://charts.mongodb.com/charts-gowtham-clpro/embed/charts?id=64641e66-61dc-4811-88ef-2db235c8c92e&maxDataAge=60&theme=light&autoRefresh=true"></iframe>
+    <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="50%" height="332vh"  src="https://charts.mongodb.com/charts-gowtham-clpro/embed/charts?id=64641fa5-7d56-4c16-8700-5224fad33610&maxDataAge=60&theme=light&autoRefresh=true"></iframe></div>
+

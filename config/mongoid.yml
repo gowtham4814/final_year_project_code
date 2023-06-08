@@ -1,0 +1,9 @@
+development:
+  clients:
+    default:
+      uri: "mongodb+srv://gowtham:tbbjOmjorm0wDwK1@cluster0.88yorqa.mongodb.net/dummy?retryWrites=true&w=majority"
+
+test:
+  clients:
+    default:
+      uri: "mongodb://localhost:27017/untitled2_test"

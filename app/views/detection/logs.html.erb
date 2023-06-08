@@ -1,0 +1,176 @@
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+
+</head>
+<div class="header">
+  <div class="inner-header">
+    <h2 class="topic">
+      Mr. Supervisor</h2>
+    <%= link_to 'Home', home_path, class: 'home' %>
+    <%= link_to 'Logs', logs_path, class: 'log' %>
+    <%= link_to 'Graph', graph_path, class: 'graph' %>
+    <%= link_to 'Logout', logout_path, class: 'logout' %>
+  </div></div>
+<div class="logs">
+  <div class="card-1" id="data-card">
+    <% @data.each do |data| %>
+      <div class="data-item">
+        <p>unsafe: <%= data.not_safe %></p>
+        <p>no_mask: <%= data.no_mask %></p>
+        <p>no_helmet: <%= data.no_helmet %></p>
+        <p>safe: <%= data.safe %></p>
+        <p>unconscious: <%= data.unconcious %></p>
+        <p>fire: <%= data.fire %></p>
+        <p>Time: <%= data.timestamp.strftime('%Y-%m-%d') %></p>
+      </div>
+    <% end %>
+  </div>
+  <div class="card-2">
+    <h3>Today total list</h3>
+    <table class="table table-hover m-auto">
+      <tr>
+        <td>unsafe:</td>
+        <td><%= @total[:not_safe] %></td>
+      </tr>
+      <tr>
+        <td>no_mask: </td>
+        <td><%= @total[:no_mask] %></td>
+      </tr>
+      <tr>
+        <td>no_helmet:</td>
+        <td><%= @total[:no_helmet] %></td>
+      </tr>
+      <tr>
+        <td>safe:</td>
+        <td><%= @total[:safe] %></td>
+      </tr>
+      <tr>
+        <td>unconscious:</td>
+        <td><%= @total[:unconcious] %></td>
+      </tr>
+      <tr>
+        <td>fire:</td>
+        <td><%= @total[:fire] %></td>
+      </tr>
+    </table>
+
+  </div>
+</div>
+<style>
+    .header{
+        width: 100%;
+        float: top;
+        height: 10vh;
+        background: #1876f1;
+    }
+    .topic{
+        font-family: cursive;
+        color: whitesmoke;
+        font-size: xx-large;
+        margin-top: 8px;
+
+    }
+    .inner-header{
+        display: flex;
+        justify-content: space-around;
+    }
+    .data-item {
+        margin-bottom: 20px;
+        display: flex;
+    }
+    .data-item p {
+        margin-left: 20.5px;
+    }
+    .inner-header a{
+        margin-top: 15px;
+        height: 40px;
+        color: #f4f4f4;
+        text-decoration: none;
+        padding-top: 8px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .inner-header a:hover{
+        background: #1463cc;
+        border-radius: 6px;
+
+    }
+
+    body {
+        margin-right: 2px;
+        margin-left: 2px;
+        margin-top:  2px;
+        font-family: Arial;
+    }
+    .logout{
+        margin-right: 5px;
+    }
+    .card-1 {
+        width: 40%;
+        height: 75vh;
+        overflow: scroll;
+        overflow-x: hidden;
+        margin-top: 35px;
+        margin-right: 50px;
+        padding:14px;
+        border: 2px solid black;
+        border-radius: 15px;
+        background: #232121;
+        color: whitesmoke;
+        box-shadow: 0.2px 3px 3px rgba(17, 17, 17, 0.55);
+    }
+    .card-1::-webkit-scrollbar {
+        /*width: 10px;*/
+        display: none;
+    }
+
+    /* Track */
+    .card-1::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        display: none;
+    }
+
+    /* Handle */
+    .card-1::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 75px;
+        display: none;
+    }
+
+    /* Handle on hover */
+    .card-1::-webkit-scrollbar-thumb:hover {
+        background: #555;
+        display: none;
+    }
+    .card-2{
+        margin-right: 30px;
+        margin-top: 150px;
+        width: 50%;
+    }
+    .logs{
+        display: flex;
+        justify-content: right;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var dataCard = document.getElementById('data-card');
+        dataCard.scrollTop = dataCard.scrollHeight;
+    });
+
+        document.addEventListener('DOMContentLoaded', function() {
+        var dataCard = document.getElementById('data-card');
+        dataCard.scrollTop = dataCard.scrollHeight;
+    });
+
+        // Reload the page every 20 seconds
+        setInterval(function() {
+        location.reload();
+    }, 20000);
+
+
+</script>

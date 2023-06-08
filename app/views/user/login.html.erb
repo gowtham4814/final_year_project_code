@@ -1,0 +1,47 @@
+<%= form_with url: 'login', method: 'post' do |form| %>
+  <div >
+    <div class="inner-container">
+  <h2>Login</h2>
+  <%= form.label :username, class: 'label1' %>
+  <%= form.text_field :username, class:'username'%><br><br>
+  <%= form.label :password,class: 'label2'  %>
+  <%= form.password_field :password, class:'password' %><br><br>
+  <%= form.submit "Login", class:'submit' %></div>
+<% end %></div>
+<style>
+  .inner-container{
+      margin-left: 33%;
+      margin-top: 210px;
+      width: 20vw;
+      background: #f3f2f2;
+      padding: 35px;
+      box-shadow: 0.2px 3px 3px rgba(17, 17, 17, 0.55);
+
+  }
+  .inner-container h2{
+      text-align: center;
+  }
+  .label1{
+      margin-right: 20px;
+  }
+  .label2{
+      margin-right: 23px;
+  }
+  .username{
+      padding: 7px;
+  }
+
+  .password{
+      padding: 7px;
+  }
+.submit{
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #5cd2b4;
+    border-radius: 8px;
+    margin-left: 120px;
+    border:none
+}
+</style>
